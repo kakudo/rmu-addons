@@ -1,14 +1,14 @@
 # これはなに 
-RPG Maker Uniteのサンプルゲーム 
-「MP0の魔法使いと僧侶が仲間の棺桶を抱えてダンジョン中腹から脱出する」 
-で使っているアドオンの詰め合わせです。 
-https://rpgmakerunite.com/game/ 
- 
-This is an assortment of add-ons used in the RPG Maker Unite sample game 
-"The MP0 Sorceress and Priest Duo - Dungeon Escape with Companion’s Coffin" 
- 
-https://rpgmakerunite.com/game/ 
- 
+RPG Maker Uniteのサンプルゲーム  
+「MP0の魔法使いと僧侶が仲間の棺桶を抱えてダンジョン中腹から脱出する」  
+で使っているアドオンの詰め合わせです。  
+https://rpgmakerunite.com/game/  
+  
+This is an assortment of add-ons used in the RPG Maker Unite sample game  
+"The MP0 Sorceress and Priest Duo - Dungeon Escape with Companion’s Coffin"  
+  
+https://rpgmakerunite.com/game/  
+  
 | 物理名 | 説明 | Explain |
 ----|----|---- 
 | RDBanBattleRandom | 戦闘のランダム要素を選択して除去します。詳しくは中身を見てください。 | Select and remove random elements of the battle. See contents for details. |
@@ -27,33 +27,33 @@ https://rpgmakerunite.com/game/
 | RDMoveStop | 特定スイッチを入れるとデフォルトの操作を全て受け付けなくなります。 | When the specific switch is turned on, all default operations are no longer accepted. |
 | RDSkillSwitch | スキルを使うとスイッチをＯＮ・ＯＦＦしたり、特定スイッチの状態でスキルの使用可否を制御します。 | Using a skill turns a switch on or off, or controls the availability of a skill by the state of a specific switch. |
 | RDZoom | カメラを指定した場所にズームイン・アウトします。自機・単独イベント・複数イベント・座標選択可。イージングもあります。 | Zooms the camera in and out to the specified location. Self, single event, multiple events, and coordinates selectable. Easing is also available. |
-
+  
 # 使い方 
-\Assets\RPGMaker\Codebase\Add-ons 
-の中にフォルダごと入れてください。 
-Uniteのメニューでアドオンを選択し、アドオンをチェックすれば使えるようになるはずです。
-
-いくつかのアドオンは 
-https://support.rpgmakerunite.com/hc/ja/community/posts/20064652518169-ReplaceCodesAddon 
-で紹介されている「ReplaceCodesAddon」を前提としています。 
-詳しくは中身を見てください。 
-
-申し訳ないことにRadian（角度ゆいえ）はこのアドオンの動作を保証することができません。 
-また、不具合の修正や機能の追加依頼も恐らく受け付けられません 
-問題が発生した時にご自身で対処できる方、 
-もしくは何が起こっても怒らない方のみご利用ください。 
-
-Put the add-on folder inside the following folder
-\Assets\RPGMaker\Codebase\Add-ons 
-And in the Unite menu, select Add-ons and check Add-ons and you should be able to use it. 
+\Assets\RPGMaker\Codebase\Add-ons  
+の中にフォルダごと入れてください。  
+Uniteのメニューでアドオンを選択し、アドオンをチェックすれば使えるようになるはずです。 
  
-Some add-ons are available at 
-https://support.rpgmakerunite.com/hc/ja/community/posts/20064652518169-ReplaceCodesAddon 
-Some add-ons assume the "ReplaceCodesAddon" introduced in the "ReplaceCodesAddon" section. 
-See what's inside for details. 
+いくつかのアドオンは  
+https://support.rpgmakerunite.com/hc/ja/community/posts/20064652518169-ReplaceCodesAddon  
+で紹介されている「ReplaceCodesAddon」を前提としています。  
+詳しくは中身を見てください。  
+  
+申し訳ないことにRadian（角度ゆいえ）はこのアドオンの動作を保証することができません。  
+また、不具合の修正や機能の追加依頼も恐らく受け付けられません  
+問題が発生した時にご自身で対処できる方、  
+もしくは何が起こっても怒らない方のみご利用ください。  
  
-Sorry, Radian (Kakudo Yuie) cannot guarantee that this addon will work. 
-Also, we probably cannot accept requests to fix problems or add features! 
-You must be able to deal with the problem yourself when it occurs, 
-Or, please only use this add-on if you are not offended by what happens. 
-
+Put the add-on folder inside the following folder  
+\Assets\RPGMaker\Codebase\Add-ons  
+And in the Unite menu, select Add-ons and check Add-ons and you should be able to use it.  
+  
+Some add-ons are available at  
+https://support.rpgmakerunite.com/hc/ja/community/posts/20064652518169-ReplaceCodesAddon  
+Some add-ons assume the "ReplaceCodesAddon" introduced in the "ReplaceCodesAddon" section.  
+See what's inside for details.  
+  
+Sorry, Radian (Kakudo Yuie) cannot guarantee that this addon will work.  
+Also, we probably cannot accept requests to fix problems or add features!  
+You must be able to deal with the problem yourself when it occurs,  
+Or, please only use this add-on if you are not offended by what happens.  
+  
