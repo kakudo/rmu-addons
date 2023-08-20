@@ -1,0 +1,17 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameBattler.cs
+method
+RemoveStatesByDamage
+replace
+var GameBattler_RemoveStatesByDamage_RDExtensionState_beforeStateList = new List<RPGMaker.Codebase.CoreSystem.Knowledge.DataModel.State.StateDataModel>(States);
+<ORIGINAL_CONTENT>
+GameBattler_RemoveStatesByDamage_RDExtensionState_beforeStateList.ForEach(st => {
+    if (IsStateAffected(st.id)) return;
+    string GameBattler_RemoveStatesByDamage_RDExtensionState_rdExtStateId = RPGMaker.Codebase.Addon.RDExtensionStateInternal.GetRDExtStateId(st);
+    if (GameBattler_RemoveStatesByDamage_RDExtensionState_rdExtStateId == null) return;
+
+    RPGMaker.Codebase.CoreSystem.Knowledge.DataModel.State.StateDataModel GameBattler_RemoveStatesByDamage_RDExtensionState_extState = DataManager.Self().GetStateDataModels().Find(sm => RPGMaker.Codebase.Addon.RDExtensionStateInternal.GetRDStateId(sm) == GameBattler_RemoveStatesByDamage_RDExtensionState_rdExtStateId);
+    if (GameBattler_RemoveStatesByDamage_RDExtensionState_extState != null)
+    {
+        AddState(GameBattler_RemoveStatesByDamage_RDExtensionState_extState.id);
+    }
+});

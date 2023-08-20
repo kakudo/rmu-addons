@@ -1,0 +1,9 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameParty.cs
+method
+RateSurprise
+replace
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsBanSurpriseAndPreemptive())
+{
+    return 0;
+}
+<ORIGINAL_CONTENT>

@@ -1,0 +1,11 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Sprites/SpriteDamage.cs
+method
+UpdateTimeHandler
+replace
+<ORIGINAL_CONTENT>
+var SpriteDamage_UpdateTimeHandler_RDBattleSpeedUp_execSwitchNo = RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetExecSwitchNo();
+if (SpriteDamage_UpdateTimeHandler_RDBattleSpeedUp_execSwitchNo == 0 || DataManager.Self().GetRuntimeSaveDataModel().switches.data[SpriteDamage_UpdateTimeHandler_RDBattleSpeedUp_execSwitchNo - 1])
+{
+    var addCount = RPGMaker.Codebase.Addon.RDBattleSpeedUpInternal.IsFastForward() ? RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetSkipOnRate() : RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetNormalRate();
+    _nowDurationCount = _nowDurationCount + addCount - 1;
+}

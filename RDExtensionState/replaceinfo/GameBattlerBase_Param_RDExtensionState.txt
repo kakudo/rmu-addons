@@ -1,0 +1,21 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameBattlerBase.cs
+method
+Param
+replace
+Func<int, int> GameBattlerBase_Param_RDExtensionState_func = (paramId) =>
+{
+<ORIGINAL_CONTENT>
+};
+int GameBattlerBase_Param_RDExtensionState_baseVal = GameBattlerBase_Param_RDExtensionState_func.Invoke(paramId);
+var GameBattlerBase_Param_RDExtensionState_stateList = new List<StateDataModel>(States);
+GameBattlerBase_Param_RDExtensionState_stateList.ForEach(st => {
+    string buffState = RPGMaker.Codebase.Addon.RDExtensionStateInternal.GetRDExtStateValBuff(st);
+    if (buffState == null) return;
+    string[] buffStateArr = buffState.Split(',');
+    if (buffStateArr == null) return;
+    if (buffStateArr.Length != 2) return;
+    var tarParId = new List<string>(buffStateArr[0].Split('-'));
+    if (!tarParId.Contains(paramId.ToString())) return;
+    GameBattlerBase_Param_RDExtensionState_baseVal += int.Parse(buffStateArr[1]);
+});
+return GameBattlerBase_Param_RDExtensionState_baseVal;

@@ -1,0 +1,77 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameAction.cs
+method
+TargetsForOpponents
+replace
+List<GameBattler> GameAction_TargetsForOpponents_RDBanBattleRandom_func() {
+<ORIGINAL_CONTENT>
+}
+var targets = GameAction_TargetsForOpponents_RDBanBattleRandom_func();
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsBanRandomOnActionTarget())
+{
+    if (IsForRandom() || (IsForOne() && _targetIndex < 0))
+    {
+        targets = new List<GameBattler>();
+        string GameAction_TargetsForOpponents_RDBanBattleRandom_itemId = Item.ItemId;
+        string GameAction_TargetsForOpponents_RDBanBattleRandom_memo = "";
+        if (IsSkill())
+        {
+            var GameAction_TargetsForOpponents_RDBanBattleRandom_skillMasterData = DataManager.Self().GetSkillCustomDataModel(GameAction_TargetsForOpponents_RDBanBattleRandom_itemId);
+            GameAction_TargetsForOpponents_RDBanBattleRandom_memo = GameAction_TargetsForOpponents_RDBanBattleRandom_skillMasterData.memo;
+        }
+        else if (IsItem())
+        {
+            var GameAction_TargetsForOpponents_RDBanBattleRandom_itemMasterData = DataManager.Self().GetItemDataModel(GameAction_TargetsForOpponents_RDBanBattleRandom_itemId);
+            GameAction_TargetsForOpponents_RDBanBattleRandom_memo = GameAction_TargetsForOpponents_RDBanBattleRandom_itemMasterData.memo;
+        }
+        var GameAction_TargetsForOpponents_RDBanBattleRandom_type = RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.GetSkillTargetOrderType(GameAction_TargetsForOpponents_RDBanBattleRandom_memo);
+        var GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlers = OpponentsUnit().AliveMembers();
+        var GameAction_TargetsForOpponents_RDBanBattleRandom_protectionBattlers = GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlers.FindAll(b => b.States.Find(s => RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.IsProtectionState(s) || RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.IsProtectionAllState(s)) != null);
+        if (GameAction_TargetsForOpponents_RDBanBattleRandom_protectionBattlers.Count > 0) GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlers = GameAction_TargetsForOpponents_RDBanBattleRandom_protectionBattlers;
+        var GameAction_TargetsForOpponents_RDBanBattleRandom_tmpTargets = new List<GameBattler>();
+        int GameAction_TargetsForOpponents_RDBanBattleRandom_tarNum = IsForOne() ? 1 : NumTargets();
+        while (GameAction_TargetsForOpponents_RDBanBattleRandom_tmpTargets.Count < GameAction_TargetsForOpponents_RDBanBattleRandom_tarNum)
+        {
+            var GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlersCopied = new List<GameBattler>(GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlers);
+            if (GameAction_TargetsForOpponents_RDBanBattleRandom_type == RPGMaker.Codebase.Addon.SkillTargetOrderType.indexlast)
+            {
+                GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlersCopied.Reverse();
+            }
+            else if (GameAction_TargetsForOpponents_RDBanBattleRandom_type == RPGMaker.Codebase.Addon.SkillTargetOrderType.hphigh)
+            {
+                GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlersCopied.Sort((a, b) =>
+                {
+                    return b.Hp - a.Hp;
+                });
+            }
+            else if (GameAction_TargetsForOpponents_RDBanBattleRandom_type == RPGMaker.Codebase.Addon.SkillTargetOrderType.hplow)
+            {
+                GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlersCopied.Sort((a, b) =>
+                {
+                    return a.Hp - b.Hp;
+                });
+            }
+            GameAction_TargetsForOpponents_RDBanBattleRandom_tmpTargets.AddRange(GameAction_TargetsForOpponents_RDBanBattleRandom_allBattlersCopied);
+        }
+        foreach (GameBattler GameAction_TargetsForOpponents_RDBanBattleRandom_bat in GameAction_TargetsForOpponents_RDBanBattleRandom_tmpTargets)
+        {
+            if (targets.Count >= GameAction_TargetsForOpponents_RDBanBattleRandom_tarNum) break;
+            targets.Add(GameAction_TargetsForOpponents_RDBanBattleRandom_bat);
+        }
+    }
+    else if (IsForAll())
+    {
+        var GameAction_TargetsForOpponents_RDBanBattleRandom_protectionAllBattlers = targets.FindAll(b => b.States.Find(s => RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.IsProtectionAllState(s)) != null);
+        var GameAction_TargetsForOpponents_RDBanBattleRandom_proNum = GameAction_TargetsForOpponents_RDBanBattleRandom_protectionAllBattlers.Count;
+        if (GameAction_TargetsForOpponents_RDBanBattleRandom_proNum > 0)
+        {
+            var GameAction_TargetsForOpponents_RDBanBattleRandom_num = targets.Count;
+            targets = new List<GameBattler>();
+            for (var i = 0; i < GameAction_TargetsForOpponents_RDBanBattleRandom_num; i++)
+            {
+                var index = i % GameAction_TargetsForOpponents_RDBanBattleRandom_proNum;
+                targets.Add(GameAction_TargetsForOpponents_RDBanBattleRandom_protectionAllBattlers[index]);
+            }
+        }
+    }
+}
+return targets;

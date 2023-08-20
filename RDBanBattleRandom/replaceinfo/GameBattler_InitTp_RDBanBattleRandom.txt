@@ -1,0 +1,12 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameBattler.cs
+method
+InitTp
+replace
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsFixInitialTp())
+{
+    SetTp(RPGMaker.Codebase.Addon.RDBanBattleRandom.GetInitialTp());
+}
+else
+{
+<ORIGINAL_CONTENT>
+}

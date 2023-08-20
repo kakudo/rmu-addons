@@ -1,0 +1,6 @@
+Assets/RPGMaker/Codebase/Runtime/Common/InputHandler.cs
+method
+Watch
+replace
+if (DataManager.Self().GetRuntimeSaveDataModel() != null && DataManager.Self().GetRuntimeSaveDataModel().switches.data[RPGMaker.Codebase.Addon.RDMoveStop.GetMoveStopSwitchNo()]) return;
+<ORIGINAL_CONTENT>

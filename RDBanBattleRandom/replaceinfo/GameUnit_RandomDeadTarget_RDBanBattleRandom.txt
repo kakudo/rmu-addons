@@ -1,0 +1,11 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects\GameUnit.cs
+method
+RandomDeadTarget
+replace
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsBanRandomOnActionTarget())
+{
+    var GameUnit_RandomDeadTarget_RDBanBattleRandom_member = DeadMembers();
+    if (GameUnit_RandomDeadTarget_RDBanBattleRandom_member.Count <= 0) return null;
+    return GameUnit_RandomDeadTarget_RDBanBattleRandom_member[0];
+}
+<ORIGINAL_CONTENT>

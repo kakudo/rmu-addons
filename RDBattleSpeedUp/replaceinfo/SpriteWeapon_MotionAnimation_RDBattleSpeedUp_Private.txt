@@ -1,0 +1,17 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Sprites/SpriteWeapon.cs
+method
+MotionAnimation
+replace
+System.Action SpriteWeapon_MotionAnimation_RDBattleSpeedUp_Private_act = () => {
+<ORIGINAL_CONTENT>
+};
+SpriteWeapon_MotionAnimation_RDBattleSpeedUp_Private_act();
+var SpriteWeapon_MotionAnimation_RDBattleSpeedUp_Private_execSwitchNo = RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetExecSwitchNo();
+if (SpriteWeapon_MotionAnimation_RDBattleSpeedUp_Private_execSwitchNo == 0 || DataManager.Self().GetRuntimeSaveDataModel().switches.data[SpriteWeapon_MotionAnimation_RDBattleSpeedUp_Private_execSwitchNo - 1])
+{
+    var addCount = RPGMaker.Codebase.Addon.RDBattleSpeedUpInternal.IsFastForward() ? RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetSkipOnRate() : RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetNormalRate();
+    for (var i = 0; i < addCount - 1; i++)
+    {
+        SpriteWeapon_MotionAnimation_RDBattleSpeedUp_Private_act();
+    }
+}

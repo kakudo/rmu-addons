@@ -1,0 +1,16 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameEnemy.cs
+method
+SelectAllActions
+replace
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsFixEnemyActionPattern())
+{
+    int GameEnemy_SelectAllActions_RDBanBattleRandom_index = BelongingTroop.TurnCount % actionList.Count;
+    for (var i = 0; i < NumActions(); i++)
+    {
+        Actions[i].SetEnemyAction(actionList[GameEnemy_SelectAllActions_RDBanBattleRandom_index]);
+    }
+}
+else
+{
+<ORIGINAL_CONTENT>
+}

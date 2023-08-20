@@ -1,0 +1,9 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/BattleManager.cs
+method
+MakeEscapeRatio
+replace
+<ORIGINAL_CONTENT>
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsEscapeMustSuccess())
+{
+    _escapeRatio = 1;
+}

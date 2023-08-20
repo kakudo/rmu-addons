@@ -1,0 +1,13 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameBattler.cs
+method
+OnTurnEnd
+replace
+<ORIGINAL_CONTENT>
+if (!isForcedTurn)
+{
+    var GameBattler_OnTurnEnd_RDBanBattleRandom_turnRecoverTp = RPGMaker.Codebase.Addon.RDBanBattleRandom.GetTurnRecoverTp();
+    if (GameBattler_OnTurnEnd_RDBanBattleRandom_turnRecoverTp > 0)
+    {
+        GainTp(GameBattler_OnTurnEnd_RDBanBattleRandom_turnRecoverTp);
+    }
+}

@@ -1,0 +1,12 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameAction.cs
+method
+Speed
+replace
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsBanRandomOnActionOrder())
+{
+    float GameAction_GetSpeed_RDBanBattleRandom_speed = Subject.Agi;
+    if (Item != null) GameAction_GetSpeed_RDBanBattleRandom_speed += Item.Speed;
+    if (IsAttack()) GameAction_GetSpeed_RDBanBattleRandom_speed += Subject.AttackSpeed();
+    return GameAction_GetSpeed_RDBanBattleRandom_speed;
+}
+<ORIGINAL_CONTENT>

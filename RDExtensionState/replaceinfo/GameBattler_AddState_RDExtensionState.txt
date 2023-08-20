@@ -1,0 +1,23 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameBattler.cs
+method
+AddState
+replace
+if (RPGMaker.Codebase.Addon.RDExtensionStateInternal.IsDisableResetState(DataManager.Self().GetStateDataModel(stateId)))
+{
+    if (IsStateAddable(stateId))
+    {
+        if (!IsStateAffected(stateId))
+        {
+            AddNewState(stateId);
+            Refresh();
+            ResetStateCounts(stateId);
+        }
+        Result.PushAddedState(stateId);
+        return true;
+    }
+    return false;
+}
+else
+{
+<ORIGINAL_CONTENT>
+}

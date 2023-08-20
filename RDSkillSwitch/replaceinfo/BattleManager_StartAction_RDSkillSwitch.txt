@@ -1,0 +1,28 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/BattleManager.cs
+method
+StartAction
+replace
+var BattleManager_StartAction_RDSkillSwitch_subject = _subject;
+var BattleManager_StartAction_RDSkillSwitch_action = BattleManager_StartAction_RDSkillSwitch_subject.CurrentAction();
+string BattleManager_StartAction_RDSkillSwitch_memo = null;
+if (BattleManager_StartAction_RDSkillSwitch_action.IsItem())
+{
+    BattleManager_StartAction_RDSkillSwitch_memo = DataManager.Self().GetItemDataModel(BattleManager_StartAction_RDSkillSwitch_action.Item.ItemId).memo;
+}
+else if (BattleManager_StartAction_RDSkillSwitch_action.IsSkill())
+{
+    BattleManager_StartAction_RDSkillSwitch_memo = DataManager.Self().GetSkillCustomDataModel(BattleManager_StartAction_RDSkillSwitch_action.Item.ItemId).memo;
+}
+var BattleManager_StartAction_RDSkillSwitch_dataModel = RPGMaker.Codebase.Addon.RDSkillSwitchInternal.GetSkillSwitchModelFromMemo(BattleManager_StartAction_RDSkillSwitch_memo);
+if (BattleManager_StartAction_RDSkillSwitch_dataModel != null)
+{
+    if (BattleManager_StartAction_RDSkillSwitch_dataModel.execOnSwitchNo > 0)
+    {
+        DataManager.Self().GetRuntimeSaveDataModel().switches.data[BattleManager_StartAction_RDSkillSwitch_dataModel.execOnSwitchNo - 1] = true;
+    }
+    if (BattleManager_StartAction_RDSkillSwitch_dataModel.execOffSwitchNo > 0)
+    {
+        DataManager.Self().GetRuntimeSaveDataModel().switches.data[BattleManager_StartAction_RDSkillSwitch_dataModel.execOffSwitchNo - 1] = false;
+    }
+}
+<ORIGINAL_CONTENT>

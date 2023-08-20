@@ -1,0 +1,22 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Window/WindowBattleLog.cs
+method
+ShowNormalAnimation
+replace
+var WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_execSwitchNo = RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetExecSwitchNo();
+if (WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_execSwitchNo == 0 || DataManager.Self().GetRuntimeSaveDataModel().switches.data[WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_execSwitchNo - 1])
+{
+    var WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_animation = DataManager.Self().GetAnimationDataModel(animationId);
+    if (WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_animation != null)
+    {
+        var WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_setRate = IsFastForward() ? RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetSkipOnRate() : RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetNormalRate();
+        var WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_delay = 1 * 60 / WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_setRate;
+        var WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_nextDelay = Mathf.RoundToInt(0.2f * 60) / WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_setRate;
+        targets.ForEach(target =>
+        {
+            target.StartAnimation(animationId, mirror, WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_delay);
+            WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_delay += WindowBattleLog_ShowNormalAnimation_RDBattleSpeedUp_nextDelay;
+        });
+    }
+    return;
+}
+<ORIGINAL_CONTENT>

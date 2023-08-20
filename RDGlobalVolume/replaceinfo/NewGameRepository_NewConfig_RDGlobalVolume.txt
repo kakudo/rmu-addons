@@ -1,0 +1,24 @@
+Assets/RPGMaker/Codebase/CoreSystem/Service/RuntimeDataManagement/Repository/NewGameRepository.cs
+method
+NewConfig
+replace
+if (RPGMaker.Codebase.Addon.RDGlobalVolume.IsGlovalVolumeOn())
+{
+    RuntimeConfig = new RuntimeConfigDataModel();
+
+    RuntimeConfig.bgmVolume = RPGMaker.Codebase.Addon.RDGlobalVolume.GetGlovalVolumeRate();
+    RuntimeConfig.bgsVolume = RPGMaker.Codebase.Addon.RDGlobalVolume.GetGlovalVolumeRate();
+    RuntimeConfig.seVolume = RPGMaker.Codebase.Addon.RDGlobalVolume.GetGlovalVolumeRate();
+    RuntimeConfig.meVolume = RPGMaker.Codebase.Addon.RDGlobalVolume.GetGlovalVolumeRate();
+
+    SaveSaveFile("config", JsonUtility.ToJson(RuntimeConfig));
+
+    return RuntimeConfig;
+}
+else
+{
+
+    <ORIGINAL_CONTENT>
+
+}
+

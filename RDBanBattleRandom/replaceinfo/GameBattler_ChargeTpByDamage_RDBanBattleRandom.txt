@@ -1,0 +1,15 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameBattler.cs
+method
+ChargeTpByDamage
+replace
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsFixDamageRecoverTp())
+{
+    if (damageRate > 0)
+    {
+        GainSilentTp(RPGMaker.Codebase.Addon.RDBanBattleRandom.GetDamageRecoverTp());
+    }
+}
+else
+{
+<ORIGINAL_CONTENT>
+}

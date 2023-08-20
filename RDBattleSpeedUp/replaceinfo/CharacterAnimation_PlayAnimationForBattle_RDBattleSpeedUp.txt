@@ -1,0 +1,10 @@
+Assets/RPGMaker/Codebase/Runtime/Common/Component/Hud/Character/CharacterAnimation.cs
+method
+PlayAnimationForBattle
+replace
+<ORIGINAL_CONTENT>
+var CharacterAnimation_PlayAnimationForBattle_RDBattleSpeedUp_execSwitchNo = RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetExecSwitchNo();
+if (CharacterAnimation_PlayAnimationForBattle_RDBattleSpeedUp_execSwitchNo == 0 || DataManager.Self().GetRuntimeSaveDataModel().switches.data[CharacterAnimation_PlayAnimationForBattle_RDBattleSpeedUp_execSwitchNo - 1])
+{
+    _effekseerHandle.speed = RPGMaker.Codebase.Addon.RDBattleSpeedUpInternal.IsFastForward() ? _effekseerHandle.speed * RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetSkipOnRate() : _effekseerHandle.speed * RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetNormalRate();
+}

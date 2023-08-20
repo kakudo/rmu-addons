@@ -1,0 +1,32 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameAction.cs
+method
+ConfusionTarget
+replace
+if (RPGMaker.Codebase.Addon.RDBanBattleRandom.IsTargetFiestIndexWhenConfuse())
+{
+    switch (Subject.ConfusionLevel())
+    {
+        case 1:
+            List<GameBattler> GameAction_ConfusionTarget_RDBanBattleRandom_opponentsBattlers = OpponentsUnit().AliveMembers();
+            var GameAction_ConfusionTarget_RDBanBattleRandom_protectionBattlers = GameAction_ConfusionTarget_RDBanBattleRandom_opponentsBattlers.FindAll(b => b.States.Find(s => RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.IsProtectionState(s) || RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.IsProtectionAllState(s)) != null);
+            if (GameAction_ConfusionTarget_RDBanBattleRandom_protectionBattlers.Count > 0) return GameAction_ConfusionTarget_RDBanBattleRandom_protectionBattlers[0];
+            return GameAction_ConfusionTarget_RDBanBattleRandom_opponentsBattlers[0];
+        default:
+            List<GameBattler> GameAction_ConfusionTarget_RDBanBattleRandom_targetBattlers = FriendsUnit().AliveMembers();
+            var GameAction_ConfusionTarget_RDBanBattleRandom_protectionFriends = GameAction_ConfusionTarget_RDBanBattleRandom_targetBattlers.FindAll(b => b.States.Find(s => RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.IsProtectionState(s) || RPGMaker.Codebase.Addon.RDBanBattleRandomInternal.IsProtectionAllState(s)) != null);
+            if (GameAction_ConfusionTarget_RDBanBattleRandom_protectionFriends.Count > 0) GameAction_ConfusionTarget_RDBanBattleRandom_targetBattlers = GameAction_ConfusionTarget_RDBanBattleRandom_protectionFriends;
+            if (GameAction_ConfusionTarget_RDBanBattleRandom_targetBattlers.Count <= 1)
+            {
+                return GameAction_ConfusionTarget_RDBanBattleRandom_targetBattlers[0];
+            }
+            else
+            {
+                foreach (GameBattler GameAction_ConfusionTarget_RDBanBattleRandom_bat in GameAction_ConfusionTarget_RDBanBattleRandom_targetBattlers)
+                {
+                    if (GameAction_ConfusionTarget_RDBanBattleRandom_bat != Subject) return GameAction_ConfusionTarget_RDBanBattleRandom_bat;
+                }
+                return GameAction_ConfusionTarget_RDBanBattleRandom_targetBattlers[0];
+            }
+    }
+}
+<ORIGINAL_CONTENT>

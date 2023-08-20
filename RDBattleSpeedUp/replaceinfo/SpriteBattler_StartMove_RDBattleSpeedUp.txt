@@ -1,0 +1,10 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Sprites/SpriteBattler.cs
+method
+StartMove
+replace
+<ORIGINAL_CONTENT>
+var SpriteBattler_StartMove_RDBattleSpeedUp_execSwitchNo = RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetExecSwitchNo();
+if (SpriteBattler_StartMove_RDBattleSpeedUp_execSwitchNo == 0 || DataManager.Self().GetRuntimeSaveDataModel().switches.data[SpriteBattler_StartMove_RDBattleSpeedUp_execSwitchNo - 1])
+{
+    _movementDuration = RPGMaker.Codebase.Addon.RDBattleSpeedUpInternal.IsFastForward() ? _movementDuration / RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetSkipOnRate() : _movementDuration / RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetNormalRate();
+}

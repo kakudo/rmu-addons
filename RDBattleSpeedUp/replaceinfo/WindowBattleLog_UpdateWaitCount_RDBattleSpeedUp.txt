@@ -1,0 +1,18 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Window/WindowBattleLog.cs
+method
+UpdateWaitCount
+replace
+bool WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_func() {
+<ORIGINAL_CONTENT>
+}
+if (WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_func()) return true;
+var WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_execSwitchNo = RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetExecSwitchNo();
+if (WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_execSwitchNo == 0 || DataManager.Self().GetRuntimeSaveDataModel().switches.data[WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_execSwitchNo - 1])
+{
+    var WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_addCount = IsFastForward() ? RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetSkipOnRate() : RPGMaker.Codebase.Addon.RDBattleSpeedUp.GetNormalRate();
+    for (var i = 0; i < WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_addCount - 1; i++)
+    {
+        if (WindowBattleLog_UpdateWaitCount_RDBattleSpeedUp_func()) return true;
+    }
+}
+return false;

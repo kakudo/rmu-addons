@@ -1,0 +1,24 @@
+Assets/RPGMaker/Codebase/Runtime/Battle/Objects/GameBattlerBase.cs
+method
+CanUse
+replace
+if (item == null)
+{
+    return false;
+}
+string GameBattlerBase_CanUse_RDSkillSwitch_memo = null;
+if (item.IsItem())
+{
+    GameBattlerBase_CanUse_RDSkillSwitch_memo = DataManager.Self().GetItemDataModel(item.ItemId).memo;
+}
+else if (item.IsSkill())
+{
+    GameBattlerBase_CanUse_RDSkillSwitch_memo = DataManager.Self().GetSkillCustomDataModel(item.ItemId).memo;
+}
+var dataModel = RPGMaker.Codebase.Addon.RDSkillSwitchInternal.GetSkillSwitchModelFromMemo(GameBattlerBase_CanUse_RDSkillSwitch_memo);
+
+if (dataModel != null && !dataModel.isActive())
+{
+    return false;
+}
+<ORIGINAL_CONTENT>

@@ -1,0 +1,14 @@
+Assets/RPGMaker/Codebase/Runtime/Title/OptionController.cs
+method
+OnChangeSeVolumeClicked
+replace
+if (_target.name == "Up")
+{
+    _runtimeConfigDataModel.seVolume -= 10;
+}
+else if (_target.name == "Down")
+{
+    _runtimeConfigDataModel.seVolume += 10;
+}
+<ORIGINAL_CONTENT>
+
