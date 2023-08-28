@@ -5,7 +5,7 @@ RPG Maker Uniteのサンプルゲーム
 https://rpgmakerunite.com/game/  
   
 This is an assortment of add-ons used in the RPG Maker Unite sample game  
-"The MP0 Sorceress and Priest Duo - Dungeon Escape with Companion’s Coffin"  
+"The MP0 Sorceress and Priest Duo - Dungeon Escape with Companion’s Coffin" (MP0 Dungeon Escape)
   
 https://rpgmakerunite.com/game/  
   
