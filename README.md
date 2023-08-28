@@ -1,4 +1,4 @@
-# これはなに 
+# これはなに（What's this） 
 RPG Maker Uniteのサンプルゲーム  
 「MP0の魔法使いと僧侶が仲間の棺桶を抱えてダンジョン中腹から脱出する」  
 で使っているアドオンの詰め合わせです。  
@@ -28,7 +28,7 @@ https://rpgmakerunite.com/game/
 | RDSkillSwitch | スキルを使うとスイッチをＯＮ・ＯＦＦしたり、特定スイッチの状態でスキルの使用可否を制御します。 | Using a skill turns a switch on or off, or controls the availability of a skill by the state of a specific switch. |
 | RDZoom | カメラを指定した場所にズームイン・アウトします。自機・単独イベント・複数イベント・座標選択可。イージングもあります。 | Zooms the camera in and out to the specified location. Self, single event, multiple events, and coordinates selectable. Easing is also available. |
   
-# 使い方 
+# 使い方（For use） 
 \Assets\RPGMaker\Codebase\Add-ons  
 の中にフォルダごと入れてください。  
 Uniteのメニューでアドオンを選択し、アドオンをチェックすれば使えるようになるはずです。 
