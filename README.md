@@ -5,8 +5,7 @@ RPG Maker Uniteのサンプルゲーム
 https://rpgmakerunite.com/game/  
   
 This is an assortment of add-ons used in the RPG Maker Unite sample game  
-"The MP0 Sorceress and Priest Duo - Dungeon Escape with Companion’s Coffin" (MP0 Dungeon Escape)
-  
+"The MP0 Sorceress and Priest Duo - Dungeon Escape with Companion’s Coffin" (MP0 Dungeon Escape)  
 https://rpgmakerunite.com/game/  
   
 | 物理名 | 説明 | Explain |
@@ -23,7 +22,7 @@ https://rpgmakerunite.com/game/
 | RDExtensionState | ステートに様々な効果を付与します（解除時に別のステート付与、能力値を固定値を増減） | Grant various effects to states (grant another state when disappeared, increase or decrease fixed values of ability values) |
 | RDFadeOut | 独自ＵＩも含めて画面をフェードアウト・インできます。操作中にイベントを動かすこともできます。 | You can fade in and out of the screen, including your own UI. Events can also be moved during operation. |
 | RDGlobalVolume | 初期ボリュームを変更できます。ついでにボリュームを10%ごとに増減できるようになります。 | You can change the initial volume. In addition, you can increase or decrease the volume by 10%. |
-| RDMapInfo | 自機が触れている時にマップ上に文字情報を表示するイベントを作れるようになります。 | You will be able to create an event that displays text information on the map when the ship is touching itself. |
+| RDMapInfo | 自機が触れている時にマップ上に文字情報を表示するイベントを作れるようになります。 | You will be able to create an event that displays text information on the map when the actor is touching itself. |
 | RDMoveStop | 特定スイッチを入れるとデフォルトの操作を全て受け付けなくなります。 | When the specific switch is turned on, all default operations are no longer accepted. |
 | RDSkillSwitch | スキルを使うとスイッチをＯＮ・ＯＦＦしたり、特定スイッチの状態でスキルの使用可否を制御します。 | Using a skill turns a switch on or off, or controls the availability of a skill by the state of a specific switch. |
 | RDZoom | カメラを指定した場所にズームイン・アウトします。自機・単独イベント・複数イベント・座標選択可。イージングもあります。 | Zooms the camera in and out to the specified location. Self, single event, multiple events, and coordinates selectable. Easing is also available. |
@@ -49,7 +48,7 @@ And in the Unite menu, select Add-ons and check Add-ons and you should be able t
   
 Some add-ons are available at  
 https://support.rpgmakerunite.com/hc/ja/community/posts/20064652518169-ReplaceCodesAddon  
-Some add-ons assume the "ReplaceCodesAddon" introduced in the "ReplaceCodesAddon" section.  
+introduced in the "ReplaceCodesAddon" section.  
 See what's inside for details.  
   
 Sorry, Radian (Kakudo Yuie) cannot guarantee that this addon will work.  
